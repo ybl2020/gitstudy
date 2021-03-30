@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [1,2,3,4,5,[6,7,8,[9,10,11,12,[13,14,15,16]]]];
+        let arr1 = [];
+        // function f(arr) {
+        //     let arr1 = [];
+        //     for(var i = 0; i<arr.length;i++){
+        //         if(Array.isArray(arr[i])){
+        //             // f(arr[i])
+        //             arr1 = arr1.concat(f(arr[i]));
+        //         }else{
+        //             arr1.push(arr[i])
+        //         }
+        //     }
+        //     // console.log(arr1);
+        // }
+        // f(arr);
+        // // console.log(f);
+        function recursion(arr) {  
+		for (var i = 0; i < arr.length; i++) {
+			if (Array.isArray(arr[i])) {
+				recursion(arr[i])
+			} else {
+				arr1.push(arr[i])
+                console.log(arr[i]);
+			}
+		}
+	}
+	recursion(arr)
+    console.log(arr1);
+    </script>
+</body>
+</html>

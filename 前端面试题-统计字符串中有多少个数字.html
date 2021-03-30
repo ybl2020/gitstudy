@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 如果isNaN函数的参数不是Number类型， isNaN函数会首先尝试将这个参数转换为数值，然后才会对转换后的结果是否是NaN进行判断。因此，对于能被强制转换为有效的非NaN数值来说（空字符串和布尔值分别会被强制转换为数值0和1） -->
+    <script>
+        function getNum(str) {
+            var num = 0;
+            for (var i = 0; i < str.length; i++) {
+                var char = str.charAt(i);
+                console.log(typeof(char));
+                //isNaN()对空格字符会转化为0，需要加个判断charAt(i)不能为空格
+                if (char != " " && !isNaN(char)) {
+                    console.log(char);
+                    console.log(typeof(char))
+                    num++;
+                }
+            }
+            return num;
+        }
+        document.write(getNum("1d3sdsg"));
+        // var n = "a3.14";
+        // if (parseInt(n.toString()) == parseFloat(n.toString()))
+        // {
+        //     document.write(n+ "是整数")
+        // }
+        // else
+        // {
+        //     document.write(n + "是小数")
+        // }
+    </script>
+</body>
+</html>

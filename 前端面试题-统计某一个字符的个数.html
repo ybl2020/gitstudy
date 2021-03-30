@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- charAt(index) 方法从一个字符串中返回指定的字符 -->
+    <!-- index
+一个介于0 和字符串长度减1之间的整数。 (0~length-1)
+如果没有提供索引，charAt() 将使用0。 -->
+    <script>
+        var str = "Can you can a can as a Canner can can a can";
+        var n = 0;
+        for(var i = 0; i < str.length; i++){
+            var char = str.charAt(i);
+            if(char.toLowerCase() == 'c'){
+                n += 1; 
+            }
+        }
+        document.write("字符串中含有" + n + "个字母c");
+    </script>
+</body>
+</html>

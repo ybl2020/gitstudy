@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .divA{
+            height: 80px;
+            width: 200px;
+            background: #5c94bd;
+            /* margin-bottom: 40px; */
+            position: relative;
+        }
+        .divB{
+            height: 40px;
+            width: 200px;
+            background: #eccd8f;
+            /* margin-top: -100px; */
+            position: absolute;
+            margin-top: 20px;
+        }
+        .divC{
+            height: 100px;
+            width: 400px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="divC">元素C</div>
+    <div class="divA">
+        <div class="divB">元素B</div>
+    </div>
+</body>
+</html>
+
+
+<!-- 1. typeof 可判断undefined, number, boolean, string, symbol, function且返回值为对应字符串；null, Array, object返回值为Object
+2. new Number(2) instanceOf Number; 不能判断null和undefined；返回值为bool类型
+3. Object.prototype.toString.call(obj) === '[object Object]' 都可判别 -->

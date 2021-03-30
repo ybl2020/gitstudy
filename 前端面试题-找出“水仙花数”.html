@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //定义一个空字符串，用来保存水仙花数
+        var str = ""; 
+        var arr= [];
+        for (var i = 100; i < 1000; i++)
+        {
+            var a = i % 10;             //提取个位数
+            var b = (i / 10) % 10       //提取十位数
+            b = parseInt(b);            //舍弃小数部分
+            var c = i / 100;            //提取百位数
+            c = parseInt(c);            //舍弃小数部分
+            if (i == (a * a * a + b * b * b + c * c * c)) 
+            {
+                arr.push(i);
+                var str = arr.join(",");
+            }
+         }
+         document.write("水仙花数有：" + str);
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 350px;
+            height: 70px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+    </style>
+</head>
+<body>
+    <p>拖动RUNOOB.COM图片到矩形框中:</p>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <br>
+    <img src="./Img/头像.jpg" alt="这是个头像" loading="lazy" id="drag1" draggable="true" ondragstart="drag(event)" width="336" height="69">
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+    
+        function drag(ev) {
+            ev.dataTransfer.setData("Text",ev.target.id)
+        }
+    
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("Text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</body>
+</html>
